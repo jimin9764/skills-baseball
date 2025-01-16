@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 1320px;
+    margin: 0 auto;
+}
+.slideBox{
+    width: 1000px;
+    height: 550px;
+    margin: 0 auto;
+    background-size:  100% 100%;
+    animation: slideAnimation 8s infinite linear;
+}
+
+@keyframes slideAnimation {
+    0%,
+    24.9%{
+        background-image: url(./img/01.jpg);
+    }
+
+    25%,
+    49.9%{
+        background-image: url(./img/04.jpg);
+    }
+
+    50%,
+    74.9%{
+        background-image: url(./img/07.jpg);
+    }
+
+    75%,
+    100% {
+        background-image: url(./img/09.jpg);
+    }
+
+}
+
+/* 모달 영역 */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+#modal-toggle:checked ~ .modal {
+    display: flex;
+    animation: fedein 0.5s ease;
+}
+
+.modal_content{
+    width: 500px;
+    height: 460px;
+    background-color: white;
+    margin: 50px auto;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.modal_header{
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid gray;
+}
+
+.modal_body{
+    width: 100%;
+    padding: 15px 0;
+    border-top: 1px solid gray;
+}
+.modal_content img{
+    width: 300px;
+    padding: 15px 0;
+    margin: 30px;
+}
+.modal_toggle{
+    display: none;
+}
+
+@keyframes fedein {
+    
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+  /* 방문자 차트 영역 */
+  .chart_main {
+    text-align: center;
+  }
+
+  .chart_manu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .chart_menu button,
+  .chart_manu select
+  {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .width_parents {
+    display: flex;
+    align-items: center;
+}
+
+.width {
+    height: 80px;
+    background-color: black;
+    margin: 10px;
+    color: white;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100px;
+}
+
+.chart_height {
+    width: 600px;
+    height: 600px;
+    background-color: antiquewhite;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.chart_width {
+    width: 600px;
+    height: 600px;
+    background-color: antiquewhite;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+}
+
+.height_parents {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.height {
+    height: 100px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100px;
+}
+#bestGoods,
+#goodsList {
+    display: flex;             
+    flex-wrap: wrap;         
+    justify-content: center;
+}
+
+#goodsEdit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    background-color: #bdbdbd;
+}
+
+#goodsEditImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    background-size: 100% 100%;
+}
+
+#imgInput{
+    display: none;
+}
+
+.textbox {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    padding: 5px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: move;
+    width: auto;
+    z-index: 1000;
+}
