@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./선수제공파일/bootstrap-5.2.0-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!--방문자 차트 영역 시작-->
+  <h1>방문자 수 조회</h1>
+  <div class="chart_menu">
+    <select name="league" id="league">
+      <option value="0">나이트 리그</option>
+      <option value="1">주말 리그</option>
+      <option value="2">새벽 리그</option>
+    </select>
+
+    <select name="week" id="week">
+      <option value="0">월</option>
+      <option value="1">화</option>
+      <option value="2">수</option>
+      <option value="3">목</option>
+      <option value="4">금</option>
+      <option value="5">토</option>
+      <option value="6">일</option>
+    </select>
+
+    <button onclick="widthChart()">가로보기</button>
+    <button onclick="heightChart()">세로보기</button>
+
+  </div>
+</div>
+
+<input type="checkbox" id="modal-toggle" class="modal_toggle">
+<div class="modal">
+  <div class="modal_content">
+    <div class="modal_header">
+
+      <h2>4월 20일</h2>
+    </div>
+    <img src="" alt="">
+    <p>아직 게임이 없습니다.</p>
+    <div class="modal-body">
+      <label for="modal-toggle">닫기</label>
+    </div>
+  </div>
+</div>
+    <!--굿즈 판매 영역 시작-->
+    <div>
+      <h1>GOODS 판매량 확인</h1>
+      <div class="goodsSale_manu">
+        <div id="goodsGroup"></div>
+        <select name="sort" id="sort" onchange="goodsListSort()">
+          <option value="saleDesc">판매량 내림차순</option>
+          <option value="saleAsc">판매량 오름차순</option>
+          <option value="priceDesc">가격 내림차순</option>
+          <option value="priceAsc">가격 오름차순</option>
+        </select>
+      </div>
+      <div id="bestGoods"></div>
+      <div id="goodsList"></div>
+    </div>
+  <div class="container">
+    <div class="slideBox"></div>
+
+    <label for="modal-toggle">클릭하세요</label>
+  </div>
+
+  <!--헤더 끝-->
+  <div class="container chart_main">
+
+    <div id="chartDiv">
+    </div>
+    <h2>주요 부문 Top5</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <input type="radio" id="accordion-batting" name="top5">
+        <label for="accordion-batting" class="accordion-header">타율</label>
+        <div class="accordion-content">일타율<br>
+          이타율<br>삼타율<br>사타율<br>오타율</div>
+      </div>
+      <div class="accordion-item">
+        <input type="radio" id="accordion-homerun" name="top5">
+        <label for="accordion-homerun" class="accordion-header">홈런</label>
+        <div class="accordion-content">일홈런<br>이홈런<br>삼홈런<br>사홈런<br>오홈런</div>
+      </div>
+      <div class="accordion-item">
+        <input type="radio" id="accordion-wins" name="top5">
+        <label for="accordion-wins" class="accordion-header">다승</label>
+        <div class="accordion-content">일다승<br>이다승<br>삼다승<br>사다승<br>오다승</div>
+      </div>
+      <div class="accordion-item">
+        <input type="radio" id="accordion-era" name="top5">
+        <label for="accordion-era" class="accordion-header">평균자책</label>
+        <div class="accordion-content">일평자<br>이평자<br>삼평자<br>사평자<br>오평자</div>
+      </div>
+      <div class="accordion-item">
+        <input type="radio" id="accordion-strikeouts" name="top5">
+        <label for="accordion-strikeouts" class="accordion-header">탈삼진</label>
+        <div class="accordion-content">일삼진<br>이삼진<br>삼삼진<br>사삼진<br>오삼진</div>
+      </div>
+      <div class="accordion-item">
+        <input type="radio" id="accordion-saves" name="top5">
+        <label for="accordion-saves" class="accordion-header">세이브</label>
+        <div class="accordion-content">일세이<br>이세이<br>삼세이<br>사세이<br>오세이</div>
+      </div>
+    </div>
+    <!--수정 제안 모달-->
+    <div id="goodsModal" class="modal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="goodsEdit" class="modal-body">
+            <div id="goodsEditIMG"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success">이미지 추가</button>
+            <button type="button" class="btn btn-secondary">글상자 추가</button>
+            <button type="button" class="btn btn-danger">삭제</button>
+            <button type="button" class="btn btn-primary">다운로드</button>
+            <button type="button" class="btn btn-warning">글상자 이동 및 회전</button>
+            <button type="button" class="btn btn-info">원래대로</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="./선수제공파일/jquery-3.7.1.min.js"></script>
+  <script src="./선수제공파일/bootstrap-5.2.0-dist/js/bootstrap.js"></script>
+  <script src="./script.js"></script>
+  <script>
+    widthChart(); 
+    goodsGroupAdd();
+  </script>
+
+</body>
+
+</html>
